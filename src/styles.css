@@ -25,6 +25,11 @@ th {
     color: #747474!important;
 }
 
+.ngx-pagination{
+  padding: 0px !important;
+  width: 100%;
+}
+
 .ngx-pagination .current {
     background: linear-gradient(65deg, #0077ff, #3f51b5 ) !important;
     color: #ffffff !important;
