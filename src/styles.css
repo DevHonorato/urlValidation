@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.table-dark{
+    background: #181b22 !important;
+}
+
+.table-dark th, .table-dark td, .table-dark thead th {
+  border-color: #32383e !important;
+  background: #181b22 !important;
+}
+
+td {
+  width: 95px !important;
+  height: 55px !important;
+}
+
+th {
+  width: 420px !important;
+}
+
+.ngx-pagination .disabled {
+    color: #747474!important;
+}
+
+.ngx-pagination .current {
+    background: linear-gradient(65deg, #0077ff, #3f51b5 ) !important;
+    color: #ffffff !important;
+    border-radius: 20px;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination button:hover {
+    background: linear-gradient(65deg, #0077ff, #3f51b5 ) !important;
+    color: #ffffff !important;
+    border-radius: 20px;
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.mat-sort-header-container {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    letter-spacing: normal;
+    outline: 0;
+    /* justify-content: center !important; */
+}
+
+.mat-progress-bar-fill::after{
+    background: linear-gradient(65deg, #0077ff, #3f51b5 ) !important;
+}
+
+.btn-primary{
+    background: linear-gradient(65deg, #0077ff, #3f51b5 ) !important;
+    border: none;
+    padding: 5px 15px;
+}
+
+.btn-primary:hover{
+    background: linear-gradient(-65deg, #0077ff, #3f51b5 ) !important;
+}
