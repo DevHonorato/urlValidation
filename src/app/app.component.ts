@@ -37,7 +37,8 @@ export class AppComponent {
   pesquisaLength = 0;
   fileName = 'Result.xlsx';
 
-  status: any;
+  status: any = "Online";
+  fixStatus: any = 1;
 
   constructor(private search: SearchPipe, private connectionCheckService: ConnectionCheckService, private notificacaoService: NotificationService,){
 
@@ -51,19 +52,11 @@ export class AppComponent {
 
     setInterval(async () => {
       const result = await checkOnlineStatus();
-      this.status = result;
-      if(this.status == "Offline"){
-        // this.notificacaoService.openSnackBar(
-        //   'Você está Offline, verifique sua conexção de rede.',
-        //   'OK',
-        //   'background-success-snackbar',
-        //   'center',
-        //   'top',
-        //   1500
-        // );
+      if(this.status != result){
+        this.status = result;
+        this.fixStatus = 2;
       }
-      console.log(this.status)
-    }, 2000); // probably too often, try 30000 for every 30 seconds
+    }, 500); // probably too often, try 30000 for every 30 seconds
 
   }
 
@@ -107,13 +100,13 @@ export class AppComponent {
         var worksheet = workbook.Sheets[first_sheet_name];
         var excelBuffer: any = XLSX.write(workbook, {bookType: 'xlsx', type: 'array'});
         var worksheetJson = XLSX.utils.sheet_to_json(worksheet,{raw:false});
-        console.log(worksheetJson)
+        // console.log(worksheetJson)
         this.totalizador = 0;
         this.totalizador = worksheetJson.length;
 
         this.total = 0;
         let count = 100/(worksheetJson.length);
-        console.log(count);
+        // console.log(count);
 
         for (let index = 0; index < worksheetJson.length; index++) {
           const element: any = worksheetJson[index];
