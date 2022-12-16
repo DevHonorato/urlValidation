@@ -4,10 +4,18 @@
 
   <div class="container c-100">
 
-    <div class="box-info-rede" *ngIf="this.status == 'Offline'">
-      <div class="container box-fix-rede">
-        <div class="info-rede">
-          <span class="reset-font" style="color: #fff;">Você está Offline, verifique sua conexção de rede.</span>
+    <div class="box-info-rede-off" *ngIf="status == 'Offline'">
+      <div class="container box-fix-rede-off">
+        <div class="info-rede-off">
+          <span class="reset-font" style="color: #fff;text-align: center;">Você está Offline, verifique sua conexção de rede.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-info-rede-on" *ngIf="status == 'Online' && fixStatus != 1">
+      <div class="container box-fix-rede-on">
+        <div class="info-rede-on">
+          <span class="reset-font" style="color: #fff;text-align: center;">Você está Online.</span>
         </div>
       </div>
     </div>
@@ -28,7 +36,7 @@
       <div class="info-box-file">
         <button class="btn btn-primary btn-sm btn-box-file" (click)="ImportXlsx2()" *ngIf="file" [disabled]="startBtn">
           Check Url's
-          <div class="spinner-border spinner-border-sm" style="margin-left: 10px;" *ngIf="startBtn"></div>
+          <div class="spinner-border spinner-border-sm" style="margin-left: 10px;width: 10px;height: 10px;" *ngIf="startBtn"></div>
         </button>
         <div class="progress-box-info" *ngIf="start && file">
           <div class="w-100">
@@ -57,7 +65,7 @@
           <span>
             <button class="btn btn-primary btn-sm btn-box-file" [disabled]="startBtn" (click)="exportexcel()">
               Export
-              <div class="spinner-border spinner-border-sm" style="margin-left: 10px;" *ngIf="startBtn"></div>
+              <div class="spinner-border spinner-border-sm" style="margin-left: 10px;width: 10px;height: 10px;" *ngIf="startBtn"></div>
             </button>
           </span>
         </small>
