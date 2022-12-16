@@ -94,3 +94,15 @@ table {
 .a-footer-info{
   padding: 0;margin: 0;color: #c7c7c7;font-size: 15px;text-decoration: none;display: flex;align-items: center;justify-content: space-between;width: 110px;
 }
+
+.box-info-rede{
+  position: relative;display: flex;justify-content: center;padding-bottom: 60px;
+}
+
+.box-fix-rede{
+  position: fixed;top: 15px;display: flex;align-items: center;justify-content: center;z-index: 6;
+}
+
+.info-rede{
+  background: #cd4646;border-radius: 15px;display: flex;align-items: center;justify-content: center;color: #fff;padding: 0px 20px;height: 55px;width: 92%;box-shadow: 4px 4px 8px #080c10;
+}

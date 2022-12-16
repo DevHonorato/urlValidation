@@ -1,12 +1,16 @@
 <!-- <router-outlet></router-outlet> -->
 
-<div style="position: relative;display: flex;justify-content: center;" *ngIf="this.status == 'Offline'">
-  <div style="width: 290px;height: 55px;background: #cd4646;position: absolute;top: 15px;border-radius: 10px;display: flex;align-items: center;justify-content: center;color: #fff;padding: 0px 20px;">
-    <span style="font-size: 13px;">Você está Offline, verifique sua conexção de rede.</span>
-  </div>
-</div>
 <div class="container-fluid cf-100">
+
   <div class="container c-100">
+
+    <div class="box-info-rede" *ngIf="this.status == 'Offline'">
+      <div class="container box-fix-rede">
+        <div class="info-rede">
+          <span class="reset-font" style="color: #fff;">Você está Offline, verifique sua conexção de rede.</span>
+        </div>
+      </div>
+    </div>
 
     <div class="box-file">
       <div class="mb-3 w-100">
