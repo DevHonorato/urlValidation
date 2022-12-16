@@ -11,6 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { SearchPipe } from '../app/service/search.pipe';
 
@@ -25,10 +26,11 @@ import { SearchPipe } from '../app/service/search.pipe';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxPaginationModule,
     MatSortModule,
     MatProgressBarModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    MatSnackBarModule
   ],
   providers: [SearchPipe],
   bootstrap: [AppComponent]
