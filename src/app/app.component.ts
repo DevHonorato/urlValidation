@@ -3,6 +3,8 @@ import { Return } from './class/Return';
 import { Sort } from '@angular/material/sort';
 import * as XLSX from 'xlsx';
 import { SearchPipe } from './service/search.pipe';
+import { ConnectionCheckService } from './service/connection-check.service';
+import { NotificationService } from './service/notification.service';
 
 
 
@@ -35,9 +37,38 @@ export class AppComponent {
   pesquisaLength = 0;
   fileName = 'Result.xlsx';
 
-  constructor(private search: SearchPipe){}
+  status: any;
+
+  constructor(private search: SearchPipe, private connectionCheckService: ConnectionCheckService, private notificacaoService: NotificationService,){
+
+    const checkOnlineStatus = async () => {
+      try {
+        const online = this.connectionCheckService;
+        return online.hasConnection; // either true or false
+      } catch (err) {
+        return false; // definitely offline
+      }};
+
+    setInterval(async () => {
+      const result = await checkOnlineStatus();
+      this.status = result;
+      if(this.status == "Offline"){
+        // this.notificacaoService.openSnackBar(
+        //   'Você está Offline, verifique sua conexção de rede.',
+        //   'OK',
+        //   'background-success-snackbar',
+        //   'center',
+        //   'top',
+        //   1500
+        // );
+      }
+      console.log(this.status)
+    }, 2000); // probably too often, try 30000 for every 30 seconds
+
+  }
 
   OnInit(): void{
+
 
   }
 
