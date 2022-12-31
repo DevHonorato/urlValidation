@@ -1,19 +1,39 @@
 # Fetch Url Validation
 
+Este projeto realiza a validação de uma lista de URLs armazenadas em um arquivo XLSX. 
+
 Demo 👉 https://devhonorato.github.io/urlValidation/
 
 Download planilha modelo 👉 https://devhonorato.github.io/urlValidation/assets/modelo/modelo.xlsx
 
 ## 
 
-Importe uma lista de URL's desejadas no formato XLSX e clique em verificar.
+O componente possui algumas propriedades, como `title`, `file`, `result`, `pag`, `contador`, `total`, `totalizador`, `start`, `startBtn`, `sucesso`, `erro`, `falha`, `pesquisa`, `pesquisaLength`, `fileName`, `status` e `fixStatus`. 
+
+Além disso, o componente possui um construtor que inicializa os serviços `SearchPipe`, `ConnectionCheckService` e `NotificationService`.
+
+O componente também possui o método `ImportXlsx2()`, que é responsável por ler o arquivo `XLSX` e validar cada URL contida nele. 
+
+Esse método utiliza a classe `FileReader` para ler o conteúdo do arquivo e, em seguida, o biblioteca `XLSX` é usada para converter o conteúdo do arquivo em um objeto JSON. 
+
+Em seguida, o componente itera sobre cada URL contida no objeto JSON e tenta fazer uma solicitação HTTP para cada uma delas, usando a função `fetch()`. 
+
+Se a solicitação for bem-sucedida, a URL é marcada como válida. 
+
+Se a solicitação falhar, a URL é marcada como inválida.
+
+O componente também possui um intervalo de tempo que verifica periodicamente o `status de conexão` da aplicação com a internet, usando o método `checkOnlineStatus()`. 
+
+Se o status mudar, a propriedade `status` é atualizada e a propriedade `fixStatus` é definida como 2.
+
+<!--Importe uma lista de URL's desejadas no formato XLSX e clique em verificar.
 
 Inicialmente o projeto foi criado para verificar a URL da imagem e o peso.
 
 Porém ele funciona com qualquer URL publica que possua um retorno.
 
 
-<!-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
 //## Development server
 
